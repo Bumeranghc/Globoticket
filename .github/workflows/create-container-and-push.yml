@@ -61,11 +61,11 @@ jobs:
         uses: gittools/actions/gitversion/execute@v0.10.2
 
       - name: Login to GitHUb
-        uses: docker/login-action@v2 
+        uses: docker/login-action@v3
         with:
           registry: ghcr.io
           username: ${{ github.actor }}
-          password: ${{ secrets.registryPassword }}
+          password: ${{ secrets.GITHUB_TOKEN }}
       # we use docker buildx to create a builder instance and then build and push the image
       - name: select docker driver
         run: |
