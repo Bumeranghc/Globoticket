@@ -20,3 +20,4 @@ WORKDIR /app
 COPY --from=publish /app/publish .
 LABEL org.opencontainers.image.source https://github.com/bumeranghc/github-actions-in-action
 ENTRYPOINT ["dotnet", "catalog.dll"]
+
